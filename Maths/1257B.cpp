@@ -19,8 +19,6 @@ int main()
         cout<<"NO"<<endl;
         else
         cout<<"YES"<<endl;
-       
-        
     }
     return 0;
 }
