@@ -1,5 +1,1 @@
-for(auto x:m)
-    // {
-    //     if(x.second == 1)
-    //     ans++;
-    // }
+v[2] = y - x;
