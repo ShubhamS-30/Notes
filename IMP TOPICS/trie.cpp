@@ -43,7 +43,7 @@ public:
                 node->put(word[i],new Node());
             }
             // move to new reference trie
-            node->get(word[i]);
+            node = node->get(word[i]);
         }
         node->setEnd();
     }
