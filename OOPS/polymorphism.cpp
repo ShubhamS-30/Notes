@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-#include <cstring>
 using namespace std;
 /*
 polymorphism ->  compile time , runtime polymorphism
@@ -40,7 +39,7 @@ public:
     }
 
     // function overloading
-    //  a single function named function acts differently in different situations, which is a property of polymorphism.
+    //  a single function named fun acts differently in different situations, which is a property of polymorphism.
     int fun(int a, int b)
     {
         cout << "function 1" << endl;
@@ -78,7 +77,7 @@ public:
         objectA res;
         res.a = this->a + x.a;
         res.b = this->b + x.b;
-        res.s = this->s + " + " + x.s;
+        res.s = this->s + x.s;
 
         return res;
     }
@@ -134,10 +133,10 @@ int main()
     // function overriding
     cout << "function overriding" << endl;
     objectB obj4;
-    cout << "obj 4" << endl;
+    cout << "sub class function" << endl;
     obj4.fun(2, 3, 4);
-    cout << "obj 1" << endl;
-    obj1.fun(2, 3, 4);
+    cout << "base class funtion" << endl;
+    obj1.fun(2,3,4);
 
     cout << endl;
     cout << endl;

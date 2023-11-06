@@ -152,7 +152,7 @@ int main()
     h6.print();
 
 
-    // use default copy constuctor (comment already made copy constructor)
+    // use default copy constuctor 
 
     hero h7(h6);
     cout<<"H7"<<endl;
@@ -163,7 +163,7 @@ int main()
 
     h7.team[0] = 'a';
 
-    ("Hero_7");
+    //("Hero_7");
     h7.print();
 
     cout<<"H6"<<endl;
@@ -200,15 +200,6 @@ int main()
     // delete h9 or  h9->~hero();
     // or 
     delete h9;
-    
-
-    //const keyword , initialization list 
-
-
-
-  
-
-
 
 
 
