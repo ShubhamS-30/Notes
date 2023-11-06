@@ -46,7 +46,7 @@ void HS(vector<int> &v)
     // One by one extract an element from heap
     for (int i = N - 1; i > 0; i--) {
  
-        // Move current root to end
+        // Move current root to en2d
         swap(v[0], v[i]);
  
         // call max heapify on the reduced heap

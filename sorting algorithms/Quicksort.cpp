@@ -7,25 +7,23 @@ worst time = O(n*n)
 */
 int partition(int l, int r, vector<int> &v)
 {
-    int less = l - 1;
+    int less = l;
     int pivot = v[r];
-
     for (int i = l; i <= r; i++)
     {
         if (v[i] < pivot)
         {
-            less++;
+            
             swap(v[i], v[less]);
+            less++;
         }
     }
-    less++;
     swap(v[less], v[r]);
 
     return less;
 }
 void QS(int l, int r, vector<int> &v)
 {
-    int n = v.size();
     if (l < r)
     {
         int part = partition(l, r, v);
