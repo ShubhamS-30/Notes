@@ -88,11 +88,11 @@ class objectB : public objectA
 public:
     // function overriding
     // Function Overriding occurs when a derived class has a definition for one of the member functions of the base class. That base function is said to be overridden.
-    int fun(int a, int b, int c)
+    int fun(int a, int b)
     {
         cout << "function 3" << endl;
-        cout << a * b + c << endl;
-        return a * b + c;
+        cout << a * b  << endl;
+        return a * b ;
     }
 
     // overriding the virtual function
@@ -134,7 +134,7 @@ int main()
     cout << "function overriding" << endl;
     objectB obj4;
     cout << "sub class function" << endl;
-    obj4.fun(2, 3, 4);
+    obj4.fun(2, 3);
     cout << "base class funtion" << endl;
     obj1.fun(2,3,4);
 
