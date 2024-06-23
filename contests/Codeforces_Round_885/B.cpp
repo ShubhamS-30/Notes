@@ -9,27 +9,30 @@ int main()
     {
         int n,k,c;
         cin>>n>>k;
-        unordered_map<int,vector<int>> mp;
+        vector<vector<int>> bridge(k);
         for(int i = 0;i<n;i++)
         {
             cin>>c;
-            mp[c].push_back(i);
+            bridge[c-1].push_back(i+1);
         }
-        int ans = 1e8;
-        for(auto x:mp)
+        int ans = 1e8,temp = 1e8;
+        int pos = 0;
+        for(int i = 0;i<k;i++)
         {
-            int l = mp[x.first][0];
-            vector<int> v;
-            v.push_back(mp[x.first][0]);
-            int diff = 1e8;
-            for(int i = 1;i<mp[x.first].size();i++)
+            pos = 0;
+            temp = 1e8;
+            priority_queue<int> jumps;
+            for(int j = 0;j<bridge[i].size();j++)
             {
-                v.push_back(mp[x.first][i] - l - 1);
-                l = mp[x.first][i];
+                jumps.push(bridge[i][j] - pos -1);
+                pos = bridge[i][j];
             }
-            v.push_back(n - l - 1);
-            sort(v.begin(),v.end(),greater<int>());
-            ans = min(diff,max(v[0]/2,v[1]));
+            jumps.push(n - pos);
+            pos = n;
+            temp = jumps.top();
+            jumps.pop();
+            jumps.push(temp/2);
+            ans = min(ans,jumps.top());
         }
         cout<<ans<<endl;
     }

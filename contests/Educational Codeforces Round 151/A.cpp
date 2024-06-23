@@ -18,39 +18,73 @@ int main()
             cout<<1<<" ";
             cout<<endl;
         }
+        else if(k==1 and x == 1)
+        {
+            cout<<"NO"<<endl;
+        }
+        else if(k == 2 and x == 1 and n%2)
+        {
+            cout<<"NO"<<endl;
+        }
         else
         {
-            int mul,rem;
-            mul = rem = -1;
-            for(int i = 1;i<=k;i++)
-            {
-                if(i!=x and n%i!=x)
-                {
-                    mul = i;
-                    m = n/i;
-                    rem = n % i;
-                    break;
-                }
-            }
-            if(rem>0)
-            m++;
-            if(mul == -1)
-            cout<<"NO"<<endl;
-            else
-            {
-                
+           if(k == n)
+           {
                 cout<<"YES"<<endl;
-                cout<<m<<endl;
-                while(n>=mul)
-                {
-                    cout<<mul<<" ";
-                    n-=mul;
-                }
-                if(rem>0)
-                cout<<rem<<endl;
-                else
-                cout<<endl;
-            }
+                cout<<1<<endl;
+                cout<<n<<endl;
+           }
+           else
+           {
+               if(n%2 == 0)
+               {
+                    cout<<"YES"<<endl;
+                    cout<<n/2<<endl;
+                    for(int i = 0;i<n/2;i++)
+                    cout<<2<<" ";
+                    cout<<endl;
+               }
+               else if(n%3 == 0)
+               {
+                    cout<<"YES"<<endl;
+                    cout<<n/3<<endl;
+                    for(int i = 0;i<n/3;i++)
+                    cout<<3<<" ";
+                    cout<<endl;
+               }
+               else if(n%3 == 1)
+               {
+                    int t = n/3;
+                    if(t <= 1)
+                        cout<<"NO"<<endl;
+                    else
+                    {
+                        cout<<"YES"<<endl;
+                        cout<<t+1<<endl;
+                        for(int i = 0;i<t-1;i++)
+                        {
+                            cout<<3<<" ";
+                        }
+                        cout<<2<<" "<<2<<endl;
+                    }
+               }
+               else if(n%3 == 2)
+               {
+                    int t = n/3;
+                    if(t <= 0)
+                        cout<<"NO"<<endl;
+                    else
+                    {
+                        cout<<"YES"<<endl;
+                        cout<<t+1<<endl;
+                        for(int i = 0;i<t;i++)
+                        {
+                            cout<<3<<" ";
+                        }
+                        cout<<2<<endl;
+                    }
+               }
+           }
         }
     }
     return 0;
